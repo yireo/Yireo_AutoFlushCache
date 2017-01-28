@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Yireo AutoFlushCache for Magento
+ *
+ * @package     Yireo_AutoFlushCache
+ * @author      Yireo (https://www.yireo.com/)
+ * @copyright   Copyright 2017 Yireo (https://www.yireo.com/)
+ * @license     Open Source License (OSL v3)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Yireo_AutoFlushCache" setup_version="0.1.0">
+        <sequence>
+            <module name="Magento_Config"/>
+        </sequence>
+    </module>
+</config>

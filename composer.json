@@ -1,0 +1,31 @@
+{
+    "name": "yireo/autoflushcache",
+    "license": "OSL-3.0",
+    "type": "magento2-module",
+    "version": "0.0.1",
+    "homepage": "",
+    "description": "",
+    "keywords":[ "composer-installer", "magento"],
+    "authors": [
+        {
+            "name": "Jisse Reitsma (Yireo)",
+            "email": "jisse@yireo.com"
+        }
+    ],
+    "require": {
+        "magento/framework": "100.*",
+        "php": ">=5.6.0"
+    },
+    "require-dev":{
+        "phpunit/phpunit":"*",
+        "composer/composer":"*@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yireo\\AutoFlushCache\\": ""
+        },        
+        "files": [
+            "registration.php"
+        ]
+    }
+}
