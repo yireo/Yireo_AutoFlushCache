@@ -12,6 +12,11 @@ flushing the cache with every change, the cache is only flushed when
 needed. In development, I always keep caching on, and then this becomes
 annoying. This module automatically flushes the cache for you.
 
+## Installation
+Install this module within Magento 2 using composer:
+
+    composer require yireo/autoflushcache
+
 ## Technical architecture
 This module listens to the event
 `controller_action_postdispatch_adminhtml_system_config_save`. Whenever
