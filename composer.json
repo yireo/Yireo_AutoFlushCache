@@ -1,5 +1,5 @@
 {
-    "name": "yireo/autoflushcache",
+    "name": "yireo/magento2-autoflushcache",
     "license": "OSL-3.0",
     "type": "magento2-module",
     "version": "0.1.0",
