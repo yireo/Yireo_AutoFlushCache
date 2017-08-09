@@ -2,7 +2,7 @@
 Magento 2 module to automatically flush the cache whenever you save
 something in the System Configuration.
 
-Do NOT use this in production.
+**Do NOT use this in production.**
 
 ## Overview
 When saving the System Configuration within Magento 2, the core
@@ -15,7 +15,7 @@ annoying. This module automatically flushes the cache for you.
 ## Installation
 Install this module within Magento 2 using composer:
 
-    composer require yireo/autoflushcache
+    composer require yireo/autoflushcache --dev
 
 ## Technical architecture
 This module listens to the event
