@@ -16,6 +16,7 @@ annoying. This module automatically flushes the cache for you.
 Install this module within Magento 2 using composer:
 
     composer require yireo/magento2-autoflushcache --dev
+    bin/magento module:enable Yireo_AutoFlushCache
 
 ## Technical architecture
 This module listens to the event
