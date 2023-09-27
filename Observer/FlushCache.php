@@ -1,25 +1,33 @@
-<?php
+<?php declare(strict_types=1);
+
 namespace Yireo\AutoFlushCache\Observer;
 
+use Magento\Framework\App\Cache\Frontend\Pool;
+use Magento\Framework\App\Cache\TypeListInterface;
+use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 
 class FlushCache implements ObserverInterface
 {
+    private TypeListInterface $cacheTypeList;
+    private Pool $cacheFrontendPool;
+
     public function __construct(
-        \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList,
-        \Magento\Framework\App\Cache\Frontend\Pool $cacheFrontendPool
+        TypeListInterface $cacheTypeList,
+        Pool $cacheFrontendPool
     ) {
-        $this->_cacheTypeList = $cacheTypeList;
-        $this->_cacheFrontendPool = $cacheFrontendPool;
+        $this->cacheTypeList = $cacheTypeList;
+        $this->cacheFrontendPool = $cacheFrontendPool;
     }
 
-    public function execute(\Magento\Framework\Event\Observer $observer)
+    public function execute(Observer $observer)
     {
         $types = array('config','block_html','full_page');
         foreach ($types as $type) {
-            $this->_cacheTypeList->cleanType($type);
+            $this->cacheTypeList->cleanType($type);
         }
-        foreach ($this->_cacheFrontendPool as $cacheFrontend) {
+
+        foreach ($this->cacheFrontendPool as $cacheFrontend) {
             $cacheFrontend->getBackend()->clean();
         }
     }
