@@ -1,0 +1,8 @@
+{
+    "module_name": "Yireo_AutoFlushCache",
+    "composer_name": "yireo/magento2-autoflushcache",
+    "sequence": [
+        "Magento_Backend",
+        "Magento_Config"
+    ]
+}
