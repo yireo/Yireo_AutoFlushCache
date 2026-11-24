@@ -134,6 +134,7 @@ class FlushCacheTest extends TestCase
 
     /**
      * @magentoAppArea adminhtml
+     * @magentoCache block_html enabled
      */
     public function testConfigSaveEventCleansCacheTypesWithoutFlushingCacheStorage(): void
     {
@@ -151,6 +152,7 @@ class FlushCacheTest extends TestCase
 
     /**
      * @magentoAppArea adminhtml
+     * @magentoCache block_html enabled
      */
     public function testConfigSavePostDispatchEventNoLongerCleansCache(): void
     {
