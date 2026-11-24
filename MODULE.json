@@ -2,8 +2,7 @@
     "module_name": "Yireo_AutoFlushCache",
     "composer_name": "yireo/magento2-autoflushcache",
     "sequence": [
-        "Magento_Backend",
-        "Magento_Config"
+        "Magento_Backend"
     ],
     "phpcs_severity": "6",
     "phpstan_level": "7"
