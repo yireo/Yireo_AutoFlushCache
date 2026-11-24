@@ -27,13 +27,23 @@ Install this module within Magento 2 using composer:
     bin/magento module:enable Yireo_AutoFlushCache
 
 ## Technical architecture
-This module listens to the event
-`controller_action_postdispatch_adminhtml_system_config_save`. Whenever
-it is called, it flushes the following caches:
+This module listens to the event `admin_system_config_save`, which is
+only dispatched after the System Configuration has been saved
+successfully. It then refreshes the following cache types:
 
 - `config`
 - `block_html`
 - `full_page`
+
+The cache types are only refreshed when:
+
+- Magento runs in developer mode;
+- The current admin user is allowed to refresh cache types (ACL
+  resource `Magento_Backend::refresh_cache_type`).
+
+Other cache entries are left alone: The entire cache storage is not
+flushed. Every refresh is logged (including the admin username) to the
+system log.
 
 ## Current status
 
