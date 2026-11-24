@@ -4,5 +4,7 @@
     "sequence": [
         "Magento_Backend",
         "Magento_Config"
-    ]
+    ],
+    "phpcs_severity": "6",
+    "phpstan_level": "7"
 }
