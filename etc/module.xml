@@ -3,10 +3,10 @@
 /**
  * Yireo AutoFlushCache for Magento
  *
- * @package     Yireo_AutoFlushCache
- * @author      Yireo (https://www.yireo.com/)
- * @copyright   Copyright 2023 Yireo (https://www.yireo.com/)
- * @license     Open Source License (OSL v3)
+ * @package         Yireo_AutoFlushCache
+ * @author            Yireo (https://www.yireo.com/)
+ * @copyright     Copyright 2023 Yireo (https://www.yireo.com/)
+ * @license         Open Source License (OSL v3)
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
