@@ -6,6 +6,7 @@ use Magento\Backend\Model\Auth\Session as AuthSession;
 use Magento\Framework\App\Cache\Type\Block as BlockCache;
 use Magento\Framework\App\Cache\TypeListInterface;
 use Magento\Framework\App\CacheInterface;
+use Magento\Framework\App\RequestInterface;
 use Magento\Framework\App\State;
 use Magento\Framework\AuthorizationInterface;
 use Magento\Framework\Event\Config\Reader as EventConfigReader;
@@ -141,7 +142,11 @@ class FlushCacheTest extends TestCase
         $this->registerAllowedObserver();
         $this->saveCacheEntries();
 
-        Bootstrap::getObjectManager()->get(EventManagerInterface::class)->dispatch('admin_system_config_save');
+        $objectManager = Bootstrap::getObjectManager();
+        $objectManager->get(EventManagerInterface::class)->dispatch('admin_system_config_save', [
+            'configData' => ['section' => 'general', 'website' => null, 'store' => null, 'groups' => []],
+            'request' => $objectManager->get(RequestInterface::class),
+        ]);
 
         $this->assertFalse(Bootstrap::getObjectManager()->get(BlockCache::class)->load(self::BLOCK_CACHE_ID));
         $this->assertSame(
